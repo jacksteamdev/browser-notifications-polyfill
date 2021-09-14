@@ -6,5 +6,7 @@
       "matches": ["https://*/*", "http://*/*"]
     }
   ],
+  "permissions": ["!notifications"],
+  "optional_permissions": ["notifications"],
   "browser_action": { "default_popup": "pages/popup/index.html" }
 }
