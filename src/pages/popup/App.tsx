@@ -6,7 +6,8 @@ const App = (): JSX.Element => {
       <h1>Popup Page</h1>
       <button
         onClick={() => {
-          chrome.permissions.request({ permissions: ['notifications'] })
+          // Permissions request must be made from a user gesture.
+          browser.permissions.request({ permissions: ['notifications'] })
         }}
       >
         Enable notifications
