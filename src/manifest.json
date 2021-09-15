@@ -1,5 +1,5 @@
 {
-  "background": { "scripts": ["background/index.ts"] },
+  "background": { "scripts": ["background/index.ts"], "persistent": false },
   "content_scripts": [
     {
       "js": ["content/index.ts"],

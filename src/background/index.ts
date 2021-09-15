@@ -1,10 +1,20 @@
 console.log('background script')
 
+console.log('my extension...')
 
+function useNotificationsApi() {
+  console.log('notifications enabled', 'notifications' in browser)
 
-console.log('my extension...');
+  browser.notifications?.onClicked.addListener(function (notificationId) {
+    console.log(notificationId)
+  })
+}
 
-browser.notifications.onClicked.addListener(function (notificationId) {
+useNotificationsApi()
 
- console.log(notificationId)
+browser.permissions.onAdded.addListener(() => {
+  useNotificationsApi()
 })
+
+// to enable top-level await
+export {}
